@@ -79,7 +79,7 @@ kubectl create namespace redis-demo
 ### Redis
 
 ```bash
-kubectl -n redis-demo apply -f redis/redis-deployment.yaml
+kubectl -n redis-demo apply -f manifests/redis-deployment.yaml
 
 # To see created resources:
 kubectl -n redis-demo get all
@@ -100,7 +100,7 @@ replicaset.apps/redis-8476db56bf   1         1         1       57s
 ### Publisher
 
 ```bash
-kubectl -n redis-demo apply -f publisher/publisher-deployment.yaml
+kubectl -n redis-demo apply -f manifests/publisher-deployment.yaml
 
 # To see created resources:
 kubectl -n redis-demo get all
@@ -150,10 +150,10 @@ kubectl -n redis-demo exec -it redis-8476db56bf-mnzpg -- redis-cli LLEN events
 
 ### Consumer
 
-**TODO: MAKE SURE TO CHANGE THE REDIS HOST IN [`consumer/consumer-scaledjob.yaml`](./consumer/consumer-scaledjob.yaml)**
+**TODO: MAKE SURE TO UPDATE THE NAMESPACE IN REDIS HOST IN [consumer-scaledjob.yaml](./manifests/consumer-scaledjob.yaml)**
 
 ```bash
-kubectl -n redis-demo apply -f consumer/consumer-scaledjob.yaml
+kubectl -n redis-demo apply -f manifests/consumer-scaledjob.yaml
 
 # To see the scaled job:
 kubectl -n redis-demo get scaledjobs/redis-scaledjob

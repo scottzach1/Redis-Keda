@@ -24,7 +24,7 @@ spec:
   triggers:
     - type: redis  # https://keda.sh/docs/2.7/scalers/redis-lists/
       metadata:
-        host: 10.99.146.61
+        host: redis.default
         port: "6379"
         listName: events
         listLength: "1"
