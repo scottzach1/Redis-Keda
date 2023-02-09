@@ -1,5 +1,5 @@
 # scottzach1/redis-consumer
-FROM python:3.8-alpine
+FROM python:3.12.0a5-alpine
 
 ENV PYTHONFAULTHANDLER=1 \
     PYTHONUNBUFFERED=1 \
