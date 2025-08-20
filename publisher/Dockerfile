@@ -1,5 +1,5 @@
 # scottzach1/redis-publisher
-FROM python:3.8-alpine
+FROM python:3.14.0rc2-alpine
 
 ENV PYTHONFAULTHANDLER=1 \
     PYTHONUNBUFFERED=1 \
